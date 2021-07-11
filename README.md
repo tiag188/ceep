@@ -1,6 +1,6 @@
 # Alura React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O aplicativo de notas [Ceep](https://github.com/tiag188/ceep).
 
 ## Available Scripts
 
