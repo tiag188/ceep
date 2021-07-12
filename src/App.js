@@ -4,21 +4,25 @@ import ListDeNotas from "./components/ListaDeNotas";
 import "./assets/App.css";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.notas = [];
+  constructor() {
+    super();
+    this.state = {
+      notas: [],
+    };
   }
 
   criarNota(titulo, descricao) {
     const novaNota = { titulo, descricao };
-    this.notas.push(novaNota);
+    const novoEstadoArrayNotas = [...this.state.notas, novaNota];
+    const novoEstado = { notas: novoEstadoArrayNotas };
+    this.setState(novoEstado);
     console.log("um novo card " + titulo + " " + descricao);
   }
   render() {
     return (
       <section className="conteudo">
         <FormularioCadastro criarNota={this.criarNota.bind(this)} />
-        <ListDeNotas notas={this.notas} />
+        <ListDeNotas notas={this.state.notas} />
       </section>
     );
   }
